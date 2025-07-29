@@ -1,0 +1,548 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(135deg, #ffc107, #ff9800);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  width: 250px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links li a:hover {
+  color: #dc3545;
+  transform: translateY(-2px);
+}
+
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #dc3545;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.btn-contact {
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.btn-contact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffc107, #ff9800);
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+}
+
+.hero-box {
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+  position: relative;
+  z-index: 2;
+}
+
+.item.kiri {
+  flex: 1;
+  text-align: center;
+}
+
+.person-image {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14em;
+}
+
+.person-image img {
+  width: 700px;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.product-item {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  animation: bounce 2s infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.item.kanan {
+  flex: 1;
+  text-align: center;
+}
+
+.item.kanan h1 {
+  font-size: 4rem;
+  color: white;
+  font-weight: 700;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  animation: slideInRight 1s ease-out;
+}
+
+.item.kanan span {
+  font-size: 4rem;
+  color: white;
+  font-weight: 700;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  display: block;
+  animation: slideInRight 1s ease-out 0.2s both;
+}
+
+.item.kanan p {
+  font-size: 1.5rem;
+  color: #dc3545;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  animation: slideInRight 1s ease-out 0.4s both;
+}
+
+.indonesia-map {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  animation: slideInRight 1s ease-out 0.6s both;
+}
+
+.indonesia-map img {
+  width: 500px;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Product Section */
+section.slider-container {
+  min-height: 100vh;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 30px 10px;
+}
+
+.slider {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0 20px;
+}
+
+.card {
+  min-width: 280px;
+  background: linear-gradient(to bottom, #ffcc00 60%, #fef6e7 40%);
+  border-radius: 40px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.card .price {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 25px;
+  border-bottom-right-radius: 60px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.card img {
+  width: 400px;
+  margin: 20px auto 0;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  color: #c40000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 10px;
+  margin-bottom: 15px;
+}
+
+.card a {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.nav {
+  background-color: white;
+  color: red;
+  border: none;
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev {
+  margin-right: 10px;
+}
+
+.next {
+  margin-left: 10px;
+}
+
+/* Optional Scrollbar Hidden */
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+/* tentang section */
+.tentang {
+  min-height: 100vh;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('asset/image/background/2.png');
+  background-position: center;
+  background-size: cover;
+}
+
+.tentang-title {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* tentang-isi section */
+.tentang-isi {
+  min-height: 100vh;
+  background-color: #c82333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('asset/image/background/1.png');
+  background-position: center;
+  background-size: cover ;
+}
+
+.isi-content {
+  width: 800px;
+  height: 650px;
+  padding: 5em;
+  background-color: white;
+  line-height: 1.5;
+  border: none;
+  border-radius: 10px;
+}
+
+.isi-content h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: red;
+}
+
+.isi-content p {
+  font-size: 16px;
+  font-weight: 500;
+  color: grey;
+}
+
+.isi-content .title {
+  margin-bottom: 10px;
+}
+
+.isi-content .subtitle {
+  margin-bottom: 10px;
+}
+
+/* produk section */
+.produk {
+  min-height: 100vh;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.produk-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.item .heading {
+  color: #ff9800;
+  margin-bottom: 10px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.item .sub {
+  color: white;
+  margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.item .small {
+  color: white;
+}
+/* Contact Section */
+.bar-kontak {
+  min-height: 100px;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bar-kontak-isi h1 {
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.kontak {
+min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  margin: 0 auto;
+  flex: 1;
+  background-color: #ffcc00;
+}
+.form-section {
+  flex: 1;
+  padding: 30px;
+  border-radius: 15px;
+}
+.form-section h2 {
+  margin-top: 0;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: white;
+  font-weight: 500;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  border: 2px solid #e0b400;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #c0392b;
+  outline: none;
+}
+.info-section {
+  flex: 1;
+  padding: 30px;
+  background: #c0392b;
+  color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.info-section h2 {
+  margin-top: 0;
+  font-size: 1.8em;
+  font-weight: 700;
+}
+.info-section p {
+  margin: 15px 0;
+  font-size: 1.1em;
+}
+.info-section .location::before {
+  content: "📍 ";
+}
+.info-section .phone::before {
+  content: "📞 ";
+}
+.info-section .email::before {
+  content: "📧 ";
+}
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #333;
+  color: white;
+  font-size: 0.9em;
+}
+footer a {
+  color: #f4e04d;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .item.kanan h1,
+  .item.kanan span {
+    font-size: 2.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
